@@ -127,13 +127,13 @@ public:
     inlet<>  input {this, "bang to request new value"};
 	outlet<> output {this, "chosen value"};
 
-    attribute<int, threadsafe::no, limit::clamp> maxsize{ this, "maxsize", 300, range {0, 1000} };
-    attribute<int, threadsafe::no, limit::clamp> backward_stepsize{ this, "backward_stepsize", 5, range {1, 1000} };
-    attribute<int, threadsafe::no, limit::clamp> forward_stepsize{ this, "forward_stepsize", 5, range {1, 1000} };
+    attribute<int, threadsafe::no, limit::clamp> maxsize{ this, "maxsize", 300, range {0, 10000000} };
+    attribute<int, threadsafe::no, limit::clamp> backward_stepsize{ this, "backward_stepsize", 5, range {1, 10000000} };
+    attribute<int, threadsafe::no, limit::clamp> forward_stepsize{ this, "forward_stepsize", 5, range {1, 10000000} };
     attribute<double, threadsafe::no, limit::clamp> forward_chance{ this, "forward_chance", 0.5, range {0.0, 1.0} };
     attribute<bool> wrap{ this, "wrap", true };
-    attribute<int, threadsafe::no, limit::clamp> minval{ this, "minval", 0, range {0, 1000} };
-    attribute<int, threadsafe::no, limit::clamp> maxval{ this, "maxval", 299, range {0, 1000} };
+    attribute<int, threadsafe::no, limit::clamp> minval{ this, "minval", 0, range {0, 10000000} };
+    attribute<int, threadsafe::no, limit::clamp> maxval{ this, "maxval", 299, range {0, 10000000} };
     attribute<int, threadsafe::no, limit::clamp> maxiterations{ this, "maxiterations", 100, range {1, 1000} };
 
     Change bw_stepsize_tracker = backward_stepsize;
